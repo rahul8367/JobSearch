@@ -2,10 +2,13 @@ package com.project.jobSearch.Rest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.project.jobSearch.Service.CompanyServiceImp;
 import com.project.jobSearch.entity.Company;
 import com.project.jobSearch.entity.Job;
+import com.project.jobSearch.repository.CompanyRepo;
 import org.assertj.core.api.AbstractBigDecimalAssert;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -36,8 +39,8 @@ public class RestControllerTest {
     @Autowired
     private MockMvc mocMvc;
     @MockBean
-    private RestController restController;
-
+    private CompanyRepo restController;
+    private CompanyServiceImp companyService;
     @org.junit.Test
     public void createAndSaveData() throws Exception {
         Company mocCompany=new Company();
@@ -56,7 +59,7 @@ public class RestControllerTest {
         String inputJ=this.mapToJson(mocCompany);
         String URI="/api/save";
         System.out.println(inputJ);
-        Mockito.when(restController.saveData(mocCompany)).thenReturn(mocCompany);
+        Mockito.when(companyService.add(Mockito.any(Company.class))).thenReturn(mocCompany);
         RequestBuilder requst= MockMvcRequestBuilders.post(URI).accept(MediaType.APPLICATION_JSON).content(inputJ).contentType(MediaType.APPLICATION_JSON);
         MvcResult result=mocMvc.perform(requst).andReturn();
         MockHttpServletResponse response=result.getResponse();
@@ -64,7 +67,11 @@ public class RestControllerTest {
         Assertions.assertEquals(inputJ,outJson);
         assertEquals(HttpStatus.OK.value(),response.getStatus());
     }
-
+    @Test
+    public void readAllTest()throws Exception{
+        List<Company> xList=restController.findAll();
+        assertNotNull(xList);
+    }
 
     private String mapToJson(Object object)throws JsonProcessingException {
         ObjectMapper objectMapper=new ObjectMapper();

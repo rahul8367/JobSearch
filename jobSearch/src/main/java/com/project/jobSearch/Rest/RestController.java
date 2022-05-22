@@ -1,5 +1,6 @@
 package com.project.jobSearch.Rest;
 
+import com.project.jobSearch.Service.CompanyServiceImp;
 import com.project.jobSearch.repository.CompanyRepo;
 import com.project.jobSearch.repository.JobRepo;
 import com.project.jobSearch.entity.Company;
@@ -17,6 +18,7 @@ public class RestController {
 
     @Autowired
     private CompanyRepo companyRepository;
+
     @Autowired
     private JobRepo jobRepository;
 
@@ -49,7 +51,7 @@ public class RestController {
 
     //delete the company.................................................................................
     @DeleteMapping("/company/delete/{id}")
-    public String getSalariesById(@PathVariable("id") long id) {
+    public String getDeleteById(@PathVariable("id") long id) {
         try {
             Company Obj = companyRepository.getById(id);
         if (Obj != null) {
@@ -125,6 +127,7 @@ public class RestController {
                 Obj.getJobList().add(job);
                 return companyRepository.save(Obj);
             }
+
 
 
 }

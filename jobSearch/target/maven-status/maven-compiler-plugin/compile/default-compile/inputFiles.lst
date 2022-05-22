@@ -1,11 +1,11 @@
-/home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/Repo/JobRepo.java
 /home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/Service/CompanyService.java
+/home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/repository/CompanyRepo.java
 /home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/Service/JobService.java
+/home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/dto/CompanyDTO.java
 /home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/entity/Company.java
-/home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/Repo/CompanyRepo.java
-/home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/Dto/CompanyDTO.java
 /home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/entity/Job.java
 /home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/Service/JobServiceImp.java
 /home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/Service/CompanyServiceImp.java
 /home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/JobSearchApplication.java
+/home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/repository/JobRepo.java
 /home/rahuL/Desktop/rahulp/jobSearch/src/main/java/com/project/jobSearch/Rest/RestController.java
